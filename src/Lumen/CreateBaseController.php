@@ -13,17 +13,12 @@ abstract class CreateBaseController extends AbstractOpenFile
      */
     public $name = '';
 
-    public function addRoute($nameHandler, $withParams = '', $isAuth = false, $extraPath = '', $methods = '')
+    public function addRoute($method, $path, $controller = '', $isAuth = false)
     {
-        /*$route = new Route();
-        $route->name = $this->name;
-        $route->nameHandler = $nameHandler;
-        $route->paramsRequired = $withParams;
-        $route->isAuth = $isAuth;
-        $route->extraPath = $extraPath;
-        if($methods != ''){
-            $route->methods = $methods;
-        }
-        $route->run();*/
+        $route = new AddRoute();
+        $route->name = $path;
+        $route->method = $method;
+        $route->controller = $controller;
+        $route->run();
     }
 }

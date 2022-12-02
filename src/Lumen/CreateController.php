@@ -52,6 +52,6 @@ class CreateController extends CreateBaseController
         file_put_contents($this->savePath . '/' . $this->getCamelCase($this->name) . '/CreateController.php', $this->file);
 
         // Agregamos route
-        $this->addRoute('save', '', true, '', '\'POST\', \'OPTIONS\', \'HEAD\'');
+        $this->addRoute('post', $this->name . 's', $this->getCamelCase($this->name) . '\\CreateController');
     }
 }
