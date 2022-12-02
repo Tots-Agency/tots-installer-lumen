@@ -11,12 +11,12 @@ class CreateModel extends AbstractOpenFile
      * Path del archivo a tener de base
      * @var string
      */
-    protected $filePath = './vendor/tots/tots-installer-lumen/data/lumen/create_model.txt';
+    protected $filePath = __DIR__ . '/../../data/lumen/create_model.txt';
     /**
      * Path de la carpeta donde se va a guardar
      * @var string
      */
-    protected $savePath = './app/Models/';
+    protected $savePath = __DIR__ . '/../../../../../app/Models/';
     /**
      * Nombre de la DB
      *
