@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\%%nameClass%%;
 use Illuminate\Http\Request;
 
-class Create%%nameClass%%Controller extends \Laravel\Lumen\Routing\Controller
+class CreateController extends \Laravel\Lumen\Routing\Controller
 {
     public function handle(Request $request)
     {
