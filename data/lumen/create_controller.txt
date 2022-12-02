@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\%%nameClass%%;
+use Illuminate\Http\Request;
+
+class Create%%nameClass%%Controller extends \Laravel\Lumen\Routing\Controller
+{
+    public function handle(Request $request)
+    {
+        // Process validations
+        $this->validate($request, [
+%%properties_validate%%
+        ]);
+        // Create new model
+        $item = new %%nameClass%%();
+%%properties%%
+        // Save new model
+        $item->save();
+        // Return data
+        return $item;
+    }
+}
