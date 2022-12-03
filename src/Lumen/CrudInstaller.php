@@ -18,14 +18,11 @@ class CrudInstaller
 
     public function run()
     {
-        $run1 = new CreateModel();
-        $run1->name = $this->name;
-        $run1->schema = $this->schema;
-        $run1->run();
-
-        $run2 = new CreateController();
-        $run2->name = $this->name;
-        $run2->schema = $this->schema;
-        $run2->run();
+        $runs = [new CreateModel(), new CreateMigration(), new CreateController(), new CreateListController(), new CreateUpdateBulkController(), new CreateRemoveBulkController(), new CreateFetchController(), new CreateUpdateController(), new CreateRemoveController()];
+        foreach($runs as $run){
+            $run->name = $this->name;
+            $run->schema = $this->schema;
+            $run->run();
+        }
     }
 }
