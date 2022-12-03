@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Controllers\%%nameClass%%;
+
+use App\Models\%%nameClass%%;
+use Illuminate\Http\Request;
+
+class UpdateBulkController extends \Laravel\Lumen\Routing\Controller
+{
+    public function handle(Request $request)
+    {
+        // Get all params
+        $items = $request->input('%%name%%s');
+        // Init Transactions
+        DB::beginTransaction();
+        // Data
+        $data = [];
+        try {
+            // Each item
+            foreach($items as $item){
+                $controller = new UpdateController();
+                $data[] = $controller->handle($item->id, new Request($item));
+            }
+            // Commit transactions
+            DB::commit();
+        } catch (\Throwable $th) {
+            // Cancel transaction
+            DB::rollBack();
+            // Return error
+            throw $th;
+        }        
+
+        return ['%%name%%s' => $data];
+    }
+}
