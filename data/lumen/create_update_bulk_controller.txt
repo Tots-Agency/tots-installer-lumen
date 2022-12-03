@@ -4,6 +4,7 @@ namespace App\Http\Controllers\%%nameClass%%;
 
 use App\Models\%%nameClass%%;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UpdateBulkController extends \Laravel\Lumen\Routing\Controller
 {

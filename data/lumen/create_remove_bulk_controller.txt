@@ -4,6 +4,7 @@ namespace App\Http\Controllers\%%nameClass%%;
 
 use App\Models\%%nameClass%%;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RemoveBulkController extends \Laravel\Lumen\Routing\Controller
 {
@@ -20,7 +21,7 @@ class RemoveBulkController extends \Laravel\Lumen\Routing\Controller
             // Each item
             foreach($items as $itemId){
                 $controller = new RemoveByIdController();
-                $controller->deleteOne($itemId);
+                $controller->handle($itemId);
                 $data[] = $itemId;
             }
             // Commit transactions
