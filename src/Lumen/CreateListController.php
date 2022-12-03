@@ -28,6 +28,6 @@ class CreateListController extends CreateBaseController
         file_put_contents($this->savePath . '/' . $this->getCamelCase($this->name) . '/ListController.php', $this->file);
 
         // Agregamos route
-        $this->addRoute('get', $this->name . 's/', $this->getCamelCase($this->name) . '\\ListController');
+        $this->addRoute('get', $this->name . 's', $this->getCamelCase($this->name) . '\\ListController');
     }
 }

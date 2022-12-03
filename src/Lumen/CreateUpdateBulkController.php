@@ -28,6 +28,6 @@ class CreateUpdateBulkController extends CreateBaseController
         file_put_contents($this->savePath . '/' . $this->getCamelCase($this->name) . '/UpdateBulkController.php', $this->file);
 
         // Agregamos route
-        $this->addRoute('put', $this->name . 's/', $this->getCamelCase($this->name) . '\\UpdateBulkController');
+        $this->addRoute('put', $this->name . 's', $this->getCamelCase($this->name) . '\\UpdateBulkController');
     }
 }
